@@ -1,0 +1,1 @@
+export 'src/sse_io_client.dart' show ServerSentEventsIOClient;
