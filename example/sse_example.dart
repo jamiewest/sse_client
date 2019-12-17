@@ -1,6 +1,5 @@
-import 'package:sse/sse.dart';
+import 'package:sse_client/sse_client.dart';
 
 main() {
-  var e = EventSource();
-  e.connect(url: 'http://www.google.com');
+
 }

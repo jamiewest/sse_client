@@ -41,10 +41,9 @@ class ServerSentEventsBrowserClient extends BaseEventSource {
 
   @override
   void connect({String url}) {
-    var clientId = Uuid().v1();
-    _eventSource =
-        EventSource(url, withCredentials: true);
+    _eventSource = EventSource(url, withCredentials: true);
     _serverUrl = url;
+    
     _outgoingController.stream
         .listen(_onOutgoingMessage, onDone: _onOutgoingDone);
     _eventSource.addEventListener('message', _onIncomingMessage);

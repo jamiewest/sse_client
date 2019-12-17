@@ -1,8 +1,11 @@
-name: sse
-description: A starting point for Dart libraries or applications.
+name: sse_client
+description: >-
+  Provides client and server functionality for setting up bi-directional
+  communication through Server Sent Events (SSE) and corresponding POST
+  requests.
 # version: 1.0.0
-# homepage: https://www.example.com
-# author: Jamie West <jamiewst@gmail.com>
+# homepage: https://www.github.com/jamiewest/sse_client
+# author: jamiewest.dev
 
 environment:
   sdk: '>=2.6.0 <3.0.0'

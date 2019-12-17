@@ -1,22 +1,15 @@
-A library for Dart developers.
+# Server Sent Events client package.
 
-Created from templates made available by Stagehand under a BSD-style
-[license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
+This package provides support for bi-directional communication through Server Sent Events and corresponding POST requests. It's platform-independent, and can be used on both the command-line and the browser.
 
 ## Usage
 
 A simple usage example:
 
 ```dart
-import 'package:sse/sse.dart';
+import 'package:sse_client/sse_client.dart';
 
 main() {
-  var awesome = new Awesome();
+
 }
 ```
-
-## Features and bugs
-
-Please file feature requests and bugs at the [issue tracker][tracker].
-
-[tracker]: http://example.com/issues/replaceme
