@@ -1,5 +1,5 @@
-import 'package:sse_client/sse_client.dart';
+import 'package:sse_client/src/sse_client.dart';
 
-main() {
+void main() {
 
 }

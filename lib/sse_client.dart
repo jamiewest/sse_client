@@ -5,6 +5,4 @@
 /// and can be used on both the command-line and the browser.
 library sse_client;
 
-export 'src/base_event_source.dart';
-export 'src/event_source.dart';
-
+export 'src/sse_client.dart';
