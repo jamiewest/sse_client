@@ -5,7 +5,6 @@ description: >-
   requests.
 version: 0.0.3
 homepage: https://www.github.com/jamiewest/sse_client
-author: Jamie West
 
 environment:
   sdk: '>=2.6.0 <3.0.0'
