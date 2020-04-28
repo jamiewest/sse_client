@@ -3,7 +3,7 @@ description: >-
   Provides client and server functionality for setting up bi-directional
   communication through Server Sent Events (SSE) and corresponding POST
   requests.
-version: 0.0.2
+version: 0.0.3
 homepage: https://www.github.com/jamiewest/sse_client
 author: Jamie West
 
@@ -11,7 +11,7 @@ environment:
   sdk: '>=2.6.0 <3.0.0'
 
 dependencies:
-  http: ^0.12.0+2
+  http: ^0.12.1
   stream_channel: '>=1.6.8 <3.0.0'
 
 dev_dependencies:

@@ -11,25 +11,23 @@ class IOSseClient extends SseClient {
     StreamController<String> incomingController;
     final client = Client();
 
-    incomingController = StreamController<String>.broadcast(
-      onListen: () {
-        var request = Request('GET', uri)
-          ..headers['Accept'] = 'text/event-stream';
-        
-        client.send(request).then((response) {
-          if (response.statusCode == 200) {
-            response.stream.transform(EventSourceTransformer()).listen((event) {
-              incomingController.sink.add(event.data);
-            });
-          } else {
-            incomingController.addError(Exception('Failed to connect to ${uri.toString()}'));
-          }
-        });
-      },
-      onCancel: () {
-        incomingController.close();
-      }
-    );
+    incomingController = StreamController<String>.broadcast(onListen: () {
+      var request = Request('GET', uri)
+        ..headers['Accept'] = 'text/event-stream';
+
+      client.send(request).then((response) {
+        if (response.statusCode == 200) {
+          response.stream.transform(EventSourceTransformer()).listen((event) {
+            incomingController.sink.add(event.data);
+          });
+        } else {
+          incomingController
+              .addError(Exception('Failed to connect to ${uri.toString()}'));
+        }
+      });
+    }, onCancel: () {
+      incomingController.close();
+    });
 
     return IOSseClient(incomingController.stream);
   }

@@ -65,10 +65,15 @@ class EventSourceTransformer implements StreamTransformer<List<int>, Event> {
   }
 
   @override
-  StreamTransformer<RS, RT> cast <RS, RT>() => StreamTransformer.castFrom<List<int>, Event, RS, RT>(this);
+  StreamTransformer<RS, RT> cast<RS, RT>() =>
+      StreamTransformer.castFrom<List<int>, Event, RS, RT>(this);
 }
 
 class Event implements Comparable<Event> {
+  Event({this.id, this.event, this.data});
+
+  Event.message({this.id, this.data}) : event = 'message';
+
   /// An identifier that can be used to allow a client to replay
   /// missed Events by returning the Last-Event-Id header.
   /// Return empty string if not required.
@@ -79,10 +84,6 @@ class Event implements Comparable<Event> {
 
   /// The payload of the event.
   String data;
-
-  Event({this.id, this.event, this.data});
-
-  Event.message({this.id, this.data}) : event = 'message';
 
   @override
   int compareTo(Event other) => id.compareTo(other.id);
