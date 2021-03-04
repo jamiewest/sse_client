@@ -7,12 +7,12 @@ version: 0.0.3
 homepage: https://www.github.com/jamiewest/sse_client
 
 environment:
-  sdk: '>=2.6.0 <3.0.0'
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
-  http: ^0.12.1
-  stream_channel: '>=1.6.8 <3.0.0'
+  http: ^0.13.0
+  stream_channel: '>=2.1.0 <3.0.0'
 
 dev_dependencies:
-  pedantic: ^1.8.0
-  test: ^1.6.0
+  pedantic: ^1.11.0
+  test: ^1.16.5
