@@ -7,7 +7,7 @@ import '_connect_api.dart'
     // ignore: uri_does_not_exist
     if (dart.library.io) '_connect_io.dart' as platform;
 
-/// A client for sse communcation.
+/// A client for sse communication.
 class SseClient {
   SseClient({this.stream});
 
@@ -17,5 +17,5 @@ class SseClient {
   /// sends events in `text/event-stream` format.
   factory SseClient.connect(Uri uri) => platform.connect(uri);
 
-  final Stream stream;
+  final Stream? stream;
 }
