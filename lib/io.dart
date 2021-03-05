@@ -8,10 +8,10 @@ class IOSseClient extends SseClient {
   IOSseClient(Stream stream) : super(stream: stream);
 
   factory IOSseClient.connect(Uri uri) {
-    StreamController<String> incomingController;
+    late StreamController<String?> incomingController;
     final client = Client();
 
-    incomingController = StreamController<String>.broadcast(onListen: () {
+    incomingController = StreamController<String?>.broadcast(onListen: () {
       var request = Request('GET', uri)
         ..headers['Accept'] = 'text/event-stream';
 
