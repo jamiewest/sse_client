@@ -9,7 +9,15 @@ A simple usage example:
 ```dart
 import 'package:sse_client/sse_client.dart';
 
-main() {
-
+void main() {
+  var sseClient = SseClient.connect(Uri.parse('http://localhost:5000/stream?channel=messages'));
+  var stream = sseClient.stream;
+  if (stream == null) {
+    print('Stream is not connected');
+    return;
+  }
+  stream.listen((event) {
+    print(event); // event is a String
+  });                                   
 }
 ```
