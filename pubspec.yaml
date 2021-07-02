@@ -3,7 +3,7 @@ description: >-
   Provides client and server functionality for setting up bi-directional
   communication through Server Sent Events (SSE) and corresponding POST
   requests.
-version: 0.1.0
+version: 0.1.1
 homepage: https://www.github.com/jamiewest/sse_client
 
 environment:
