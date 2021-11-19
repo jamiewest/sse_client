@@ -18,7 +18,10 @@ class SseClientException implements Exception {
 }
 
 class IOSseClient extends SseClient {
-  IOSseClient(Stream stream) : super(stream: stream);
+  @override
+  final Stream<String?> stream;
+
+  IOSseClient(this.stream);
 
   factory IOSseClient.connect(Uri uri) {
     late StreamController<String?> incomingController;
@@ -44,6 +47,24 @@ class IOSseClient extends SseClient {
 
     return IOSseClient(incomingController.stream);
   }
+
+  @override
+  void close() {
+    // TODO
+    throw UnimplementedError();
+  }
+
+  @override
+  // TODO: implement errors
+  Stream<void> get errorEvents => throw UnimplementedError();
+
+  @override
+  // TODO: implement
+  Stream<void> get openEvents => throw UnimplementedError();
+
+  @override
+  // TODO: implement
+  int? get readyState => throw UnimplementedError();
 }
 
 class ClientWithCustomExceptionType extends BaseClient {
